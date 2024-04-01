@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM first assignment</title>
+    <style>
+        body{
+            background-color: #3EECAC;
+background-image: linear-gradient(19deg, #3EECAC 0%, #EE74E1 90%);
+min-height: 100vh;
+  }
+  .container{
+    background-color: white;
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    
+  }
+  .app-title{
+    color: white;
+    text-align: center;
+  }
+  .number-input{
+    width: 90%;
+    display: block;
+    margin: 20px;
+    font-size: 20px;
+  }
+  .answer{
+    color: black;
+    text-align: center;
+    font-size: 20ox;
+  }
+  .btn-claculate{
+    color: white;
+    background-color: black;
+    display: block;
+    margin: auto;
+    width: 150px;
+    font-size: 20px;
+    border-radius:50px;
+    padding:8px;
+    border: none;
+    cursor: pointer;
+  }
+    </style>
+</head>
+<body>
+  
+    <h2 class="app-title">Area of Rectangle</h2>
+     <div class="container">
+        <input type="text" placeholder="Enter length" class="number-input" id="num1"/>
+        <input type="text" placeholder="Enter breadth" class="number-input" id="num2"/>
+        <p class="answer" id="ans">Area</p>
+        <button type="calculate" class="btn-claculate" onclick="calculate()"> Calculate
+        </button>
+      </br>
+
+        <button type="calculate" class="btn-claculate" onclick="Reset()"> Reset </button>
+    </div>
+    
+    
+    
+    <script>
+        function calculate(){
+            const input1=document.getElementById("num1");
+            const input2=document.getElementById("num2");
+            const ansElement=document.getElementById("ans");
+
+            
+            const area = parseInt(input1.value) * parseInt(input2.value);
+      
+
+            ansElement.innerHTML =`Area : ${area} m<sup>2</sup>` ;
+
+        }
